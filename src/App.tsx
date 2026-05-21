@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import { HashRouter, Navigate, Route, Routes } from 'react-router-dom';
 import BottomNav from './components/BottomNav';
 import { ThemeProvider } from './state/theme';
 import { ToastProvider } from './components/Toast';
@@ -29,7 +29,7 @@ export default function App() {
   return (
     <ThemeProvider>
       <ToastProvider>
-        <BrowserRouter>
+        <HashRouter>
           <div className="min-h-screen safe-bottom">
             <Routes>
               <Route path="/" element={<Today />} />
@@ -40,7 +40,7 @@ export default function App() {
             </Routes>
           </div>
           <BottomNav />
-        </BrowserRouter>
+        </HashRouter>
       </ToastProvider>
     </ThemeProvider>
   );
